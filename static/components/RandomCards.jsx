@@ -1,4 +1,5 @@
 import React from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const allCards = [
   {
@@ -34,7 +35,7 @@ export default function RandomCards() {
       {cards.map(({ href, title, description }) => (
         <a
           key={href}
-          href={href}
+          href={useBaseUrl(href)}
           className="mycard"
           style={{ flex: '1 1 200px' }}
         >

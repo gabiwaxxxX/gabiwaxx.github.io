@@ -5,6 +5,7 @@ description: 'Présentation'
 
 import '/src/css/index.css';
 import RandomCards from '/static/components/RandomCards';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 {/* <!-- Présentation --> */}
 
@@ -20,7 +21,7 @@ import RandomCards from '/static/components/RandomCards';
     minWidth: '100px',
   }}>
     <img
-      src="/img/pp.jpg"
+      src={useBaseUrl('img/pp.jpg')}
       style={{
         width: '100%',
         height: 'auto',

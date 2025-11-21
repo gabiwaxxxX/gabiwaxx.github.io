@@ -7,7 +7,7 @@ const config = {
   favicon: 'https://www.remilia.com/identity/pfp/veryinternetperson/2608',
 
   url: 'https://gabiwaxxxx.github.io',
-  baseUrl: '/',
+  baseUrl: '/gabiwaxx.github.io/',
   
   // GitHub pages deployment config.
   organizationName: 'gabiwaxxxx',

@@ -33,22 +33,22 @@ export default function GitHubProjects() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const [gabiwaxxxResponse, gfournieriExecResponse] = await Promise.all([
+        const [gabiwaxxxResponse, gfournierProResponse] = await Promise.all([
           fetch('https://api.github.com/users/gabiwaxxxX/repos?per_page=100'),
-          fetch('https://api.github.com/users/gfournieriExec/repos?per_page=100')
+          fetch('https://api.github.com/users/gfournierPro/repos?per_page=100')
         ]);
 
         const gabiwaxxxData = await gabiwaxxxResponse.json();
-        const gfournieriExecData = await gfournieriExecResponse.json();
+        const gfournierProData = await gfournierProResponse.json();
 
         const gabiwaxxxRepos = gabiwaxxxData
           .filter(repo => !repo.private)
           .map(repo => ({ ...repo, accountName: 'gabiwaxxxX' }));
         
-        const gfournieriExecRepos = gfournieriExecData
+        const gfournierProRepos = gfournierProData
           .filter(repo => !repo.private)
-          .map(repo => ({ ...repo, accountName: 'gfournieriExec' }));
-        const allRepos = [...gabiwaxxxRepos, ...gfournieriExecRepos];
+          .map(repo => ({ ...repo, accountName: 'gfournierPro' }));
+        const allRepos = [...gabiwaxxxRepos, ...gfournierProRepos];
 
         const featured = allRepos.filter(repo => 
           featuredProjects.includes(repo.name)
